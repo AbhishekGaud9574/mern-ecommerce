@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = import.meta.env.VITE_API;
 
 axios.interceptors.request.use((config) => {
   const auth = JSON.parse(localStorage.getItem("auth"));
