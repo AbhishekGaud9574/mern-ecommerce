@@ -25,6 +25,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
+      "https://mern-ecommerce-1jy4-theta.vercel.app",
     ],
     credentials: true,
   })
