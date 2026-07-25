@@ -21,7 +21,14 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+    ],
+    credentials: true,
+  })
+);
 
 // Allow frontend connection
 if (process.env.DEV_MODE === "development") {
