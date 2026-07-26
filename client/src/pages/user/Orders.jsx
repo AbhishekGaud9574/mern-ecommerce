@@ -5,6 +5,8 @@ import axios from "axios";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
 import toast from "react-hot-toast";
+import "../../css/Orders.css";
+import { API } from './../../axiosSetup';
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -44,7 +46,7 @@ function Orders() {
 
   return (
     <Layout title={"Your Orders"}>
-      <div className="container-fluid m-3 p-3">
+     <div className="container-fluid user-orders-page">
         <div className="row">
           <div className="col-md-3">
             <UserMenu />
@@ -174,7 +176,7 @@ function Orders() {
                         <div className="row align-items-center">
                           <div className="col-md-3 text-center">
                             <img
-                              src={`/api/v1/product/product-photo/${p.product?._id}`}
+                              src={`${API}/api/v1/product/product-photo/${p.product?._id}`}
                               className="order-product-img"
                               alt={p.product?.name}
                             />

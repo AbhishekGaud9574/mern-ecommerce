@@ -1,37 +1,43 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../../context/auth";
 import Spinner from "./Spinner";
 
 export default function PrivateRoute() {
-  const [ok, setOk] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [auth] = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [ok, setOk] = useState(false);
 
   useEffect(() => {
-    const authCheck = async () => {
+    const checkAuth = async () => {
+      // Wait until AuthContext loads
+      const storedAuth = localStorage.getItem("auth");
+
+      if (!storedAuth) {
+        setLoading(false);
+        return;
+      }
+
       try {
+        const { token } = JSON.parse(storedAuth);
+
         const { data } = await axios.get("/api/v1/auth/user-auth", {
           headers: {
-            Authorization: `Bearer ${auth?.token}`,
+            Authorization: `Bearer ${token}`,
           },
         });
 
-        setOk(data?.ok);
-      } catch (error) {
+        setOk(data.ok);
+      } catch (err) {
         setOk(false);
       } finally {
         setLoading(false);
       }
     };
 
-    if (auth?.token) {
-      authCheck();
-    } else {
-      setLoading(false);
-    }
-  }, [auth?.token]);
+    checkAuth();
+  }, []);
 
   if (loading) return <Spinner />;
 

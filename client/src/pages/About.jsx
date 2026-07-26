@@ -1,19 +1,20 @@
 import Layout from "../components/Layout/Layout";
+import "../css/About.css";
 
 function About() {
   return (
     <Layout title="About Us">
-      <div className="container py-5">
+      <div className="container py-5 about-page">
         <div className="row align-items-center">
           <div className="col-md-6 mb-4">
             <img
               src="/images/aboutus.jpg"
               alt="About Us"
-              className="img-fluid rounded shadow"
+              className="about-image"
             />
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-6 about-content">
             <h2 className="mb-3">About Us</h2>
 
             <p className="text-muted">

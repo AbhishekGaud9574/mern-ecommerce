@@ -3,6 +3,8 @@ import { useSearch } from "../context/search";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useCart } from "../context/cart";
+import "../css/Search.css";
+import { API } from "./../axiosSetup";
 
 function Search() {
   const [values] = useSearch();
@@ -33,11 +35,11 @@ function Search() {
 
   return (
     <Layout title={"Search Results"}>
-      <div className="container">
+      <div className="container search-page">
         <div className="text-center">
-          <h1>Search Results</h1>
+          <h1 className="search-title">Search Results</h1>
 
-          <h6>
+          <h6 className="search-subtitle">
             {values?.results?.length < 1
               ? "No Products Found"
               : `Found ${values.results.length} Product(s)`}
@@ -47,19 +49,21 @@ function Search() {
             {values?.results?.length ? (
               values.results.map((p) => (
                 <div className="col-md-4 col-lg-3 mb-3" key={p._id}>
-                  <div className="card h-100">
-                    <img
-                      src={`/api/v1/product/product-photo/${p._id}`}
-                      className="card-img-top"
-                      alt={p.name}
-                      style={{
-                        height: "250px",
-                        objectFit: "cover",
-                      }}
-                      onError={(e) => {
-                        e.target.src = "/images/no-image.png";
-                      }}
-                    />
+                  <div className="card search-card h-100">
+                    <div className="product-img-container">
+                      <img
+                        src={`${API}/api/v1/product/product-photo/${p._id}`}
+                        className="card-img-top"
+                        alt={p.name}
+                        onError={(e) => {
+                          e.target.src = "/images/no-image.png";
+                        }}
+                      />
+
+                      {p.quantity <= 0 && (
+                        <div className="out-of-stock-overlay">OUT OF STOCK</div>
+                      )}
+                    </div>
 
                     <div className="card-body d-flex flex-column">
                       <h5 className="card-title">{p.name}</h5>
@@ -70,11 +74,11 @@ function Search() {
                           : "No description"}
                       </p>
 
-                      <p className="card-text text-success fw-bold">
+                      <p className="search-price">
                         ${Number(p.price).toFixed(2)}
                       </p>
 
-                      <div className="d-grid gap-2">
+                      <div className="search-btns">
                         <button
                           className="btn btn-primary"
                           onClick={() => navigate(`/product/${p.slug}`)}
@@ -82,19 +86,31 @@ function Search() {
                           View Details
                         </button>
 
-                        <button
-                          className="btn btn-dark"
-                          onClick={() => handleAddToCart(p)}
-                        >
-                          Add to Cart
-                        </button>
+                        {p.quantity > 0 &&
+                          (cart.some((item) => item._id === p._id) ? (
+                            <button
+                              className="btn btn-success"
+                              onClick={() => navigate("/cart")}
+                            >
+                              <i className="fa-solid fa-cart-arrow-down me-2"></i>
+                              Go to Cart
+                            </button>
+                          ) : (
+                            <button
+                              className="btn btn-dark"
+                              onClick={() => handleAddToCart(p)}
+                            >
+                              <i className="fa-solid fa-cart-shopping me-2"></i>
+                              Add to Cart
+                            </button>
+                          ))}
                       </div>
                     </div>
                   </div>
                 </div>
               ))
             ) : (
-              <p className="text-center">No products available</p>
+              <p className="no-result">No products available</p>
             )}
           </div>
         </div>

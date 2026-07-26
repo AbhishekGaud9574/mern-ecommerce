@@ -1,0 +1,170 @@
+/* =====================================
+   ADMIN PRODUCT FORM
+===================================== */
+
+.container-fluid {
+  background: #f8f9fa;
+}
+
+/* Content Area */
+
+.col-md-9 h1,
+.col-md-9 h2 {
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #212529;
+}
+
+/* Form Container */
+
+form.w-75 {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: var(--shadow-md);
+}
+
+/* Inputs */
+
+form .form-control {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+form textarea.form-control {
+  height: 120px;
+  resize: none;
+}
+
+form .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* Ant Design Select */
+
+.ant-select {
+  width: 100% !important;
+  margin-bottom: 20px;
+}
+
+.ant-select-selector {
+  height: 48px !important;
+  border-radius: 10px !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Upload Button */
+
+.btn-outline-secondary {
+  height: 48px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-outline-secondary:hover {
+  background: #0d6efd;
+  color: white;
+}
+
+/* Image Preview */
+
+.border.rounded.shadow-sm {
+  background: white;
+  border-radius: 15px !important;
+}
+
+.border.rounded.shadow-sm img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Buttons */
+
+form button.btn {
+  height: 45px;
+  padding: 0 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+form button.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+form button.btn-danger:hover {
+  transform: translateY(-2px);
+}
+
+/* =====================================
+   ADMIN PRODUCT LIST CARD
+===================================== */
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-link .card {
+  width: 260px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.product-link .card:hover {
+  transform: translateY(-8px);
+}
+
+.product-link img {
+  height: 220px;
+
+  object-fit: contain;
+
+  background: white;
+
+  padding: 15px;
+}
+
+.product-link .card-body {
+  padding: 18px;
+}
+
+.product-link h5 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.product-link h6 {
+  font-size: 20px;
+}
+
+/* =====================================
+   ADMIN RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+  form.w-75 {
+    width: 100% !important;
+
+    padding: 20px;
+  }
+
+  .product-link .card {
+    width: 100%;
+  }
+
+  .product-link img {
+    height: 180px;
+  }
+}

@@ -4,6 +4,7 @@ import UserMenu from "../../components/Layout/UserMenu";
 import { useAuth } from "../../context/auth";
 import axios from "axios";
 import toast from "react-hot-toast";
+import "../../css/Profile.css";
 
 function Profile() {
   // context
@@ -76,7 +77,7 @@ function Profile() {
             <UserMenu />
           </div>
           <div className="col-md-9">
-            <div className="register">
+            <div className="profile-wrapper">
               <form onSubmit={handleSubmit}>
                 <div className="userinfo">
                   <h3>User Profile</h3>
@@ -108,6 +109,8 @@ function Profile() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                   />
+
+                  <h5 className="address-title">Delivery Address</h5>
 
                   <input
                     type="text"

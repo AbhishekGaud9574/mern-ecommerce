@@ -4,6 +4,7 @@ import AdminMenu from "../../components/Layout/AdminMenu";
 import axios from "axios";
 import toast from "react-hot-toast";
 import * as bootstrap from "bootstrap";
+import "../../css/Users.css";
 
 function Users() {
   const [users, setUsers] = useState([]);

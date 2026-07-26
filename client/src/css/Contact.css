@@ -1,0 +1,164 @@
+/* ===========================
+   CONTACT PAGE
+=========================== */
+
+.contact-page {
+  padding: 60px 0;
+}
+
+.contact-image {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-content {
+  padding: 20px 30px;
+}
+
+.contact-heading {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.contact-heading::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.contact-details {
+  color: #6c757d;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  padding: 18px 22px;
+  border-radius: 15px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.contact-info:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-icon {
+  width: 55px;
+  height: 55px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.contact-info h6 {
+  margin: 0;
+  font-size: 15px;
+  color: #6c757d;
+}
+
+.contact-info p {
+  margin: 4px 0 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 991px) {
+  .contact-page {
+    padding: 40px 0;
+  }
+
+  .contact-content {
+    padding: 30px 10px 0;
+    text-align: center;
+  }
+
+  .contact-heading {
+    font-size: 32px;
+  }
+
+  .contact-heading::after {
+    margin: 12px auto 0;
+  }
+
+  .contact-info {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-image {
+    margin-bottom: 30px;
+  }
+
+  .contact-heading {
+    font-size: 28px;
+  }
+
+  .contact-details {
+    font-size: 15px;
+  }
+
+  .contact-info {
+    padding: 15px;
+    gap: 14px;
+  }
+
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .contact-info p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-heading {
+    font-size: 24px;
+  }
+
+  .contact-info {
+    flex-direction: row;
+    padding: 14px;
+  }
+
+  .contact-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .contact-info p {
+    font-size: 14px;
+  }
+}

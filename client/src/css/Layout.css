@@ -1,0 +1,31 @@
+/* ==============================
+        PAGE LAYOUT
+============================== */
+
+.page-content {
+  min-height: 70vh;
+
+  padding-top: 20px;
+
+  padding-bottom: 40px;
+}
+
+/* Header fixed nahi hai to */
+
+header {
+  z-index: 1000;
+}
+
+/* Footer */
+
+footer {
+  margin-top: auto;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .page-content {
+    padding-top: 10px;
+  }
+}

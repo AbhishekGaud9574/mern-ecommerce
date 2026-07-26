@@ -3,6 +3,8 @@ import AdminMenu from "../../components/Layout/AdminMenu";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { API } from "./../../axiosSetup";
+import "../../css/Products.css";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -77,39 +79,24 @@ function Products() {
                   to={`/dashboard/admin/product/${p.slug}`}
                   className="product-link"
                 >
-                  <div
-                    className="card m-4"
-                    style={{
-                      width: "18rem",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
+                  <div className="card m-4">
                     <img
-                      src={`/api/v1/product/product-photo/${p._id}`}
+                      src={`${API}/api/v1/product/product-photo/${p._id}`}
                       alt={p.name}
                       className="card-img-top"
-                      style={{
-                        width: "100%",
-                        height: "250px",
-                        objectFit: "cover",
-                      }}
                       onError={(e) => {
                         e.target.src = "/images/no-image.png";
                       }}
                     />
 
-                    <div
-                      className="card-body d-flex flex-column"
-                      style={{ height: "150px" }}
-                    >
+                    <div className="card-body d-flex flex-column">
                       <h5 className="card-title text-truncate" title={p.name}>
                         {p.name}
                       </h5>
 
                       <h6 className="text-success">${p.price}</h6>
 
-                      <p className="card-text" style={{ flexGrow: 1 }}>
+                      <p className="card-text">
                         {p.description
                           ? `${p.description.substring(0, 30)}...`
                           : "No description"}

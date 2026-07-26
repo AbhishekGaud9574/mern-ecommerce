@@ -1,0 +1,127 @@
+/* =====================================
+            USER SIDEBAR
+===================================== */
+
+.user-menu {
+  background: #ffffff;
+  padding: 25px 18px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 20px;
+}
+
+/* ==========================
+        TITLE
+========================== */
+
+.user-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.user-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background: #198754;
+  border-radius: 20px;
+}
+
+/* ==========================
+        MENU
+========================== */
+
+.user-sidebar {
+  border: none;
+}
+
+.user-sidebar .list-group-item {
+  display: flex;
+  align-items: center;
+
+  border: none !important;
+  border-radius: 12px !important;
+
+  background: #f8f9fa;
+
+  color: #212529 !important;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  padding: 14px 18px;
+
+  margin-bottom: 12px;
+
+  text-decoration: none !important;
+
+  transition: all 0.3s ease;
+}
+
+/* Icon */
+
+.user-sidebar .list-group-item i {
+  color: inherit !important;
+  font-size: 17px;
+}
+
+/* Hover */
+
+.user-sidebar .list-group-item:hover {
+  background: #198754 !important;
+  color: #ffffff !important;
+  transform: translateX(6px);
+}
+
+.user-sidebar .list-group-item:hover i {
+  color: #ffffff !important;
+}
+
+/* Active */
+
+.user-sidebar .list-group-item.active {
+  background: linear-gradient(135deg, #198754, #0f5132) !important;
+
+  color: #ffffff !important;
+
+  box-shadow: 0 8px 18px rgba(25, 135, 84, 0.35);
+}
+
+.user-sidebar .list-group-item.active i {
+  color: #ffffff !important;
+}
+
+.user-sidebar .list-group-item.active:hover {
+  background: linear-gradient(135deg, #198754, #0f5132) !important;
+  color: #ffffff !important;
+}
+
+/* Focus */
+
+.user-sidebar .list-group-item:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ==========================
+        MOBILE
+========================== */
+
+@media (max-width: 768px) {
+  .user-menu {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .user-sidebar .list-group-item {
+    justify-content: center;
+  }
+}

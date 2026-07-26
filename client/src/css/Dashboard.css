@@ -1,0 +1,121 @@
+/* ===========================
+   ADMIN DASHBOARD
+=========================== */
+
+.admin-dashboard {
+  padding: 25px;
+}
+
+/* Main Card */
+
+.admin-profile-card {
+  background: #fff;
+
+  border-radius: 18px;
+
+  padding: 35px;
+
+  box-shadow: var(--shadow-md);
+
+  transition: 0.3s;
+
+  border: 1px solid #eee;
+}
+
+.admin-profile-card:hover {
+  box-shadow: var(--shadow-lg);
+
+  transform: translateY(-3px);
+}
+
+/* Heading */
+
+.admin-profile-card h2 {
+  font-size: 32px;
+
+  font-weight: 700;
+
+  margin-bottom: 25px;
+
+  color: var(--dark);
+}
+
+/* Information */
+
+.admin-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 15px;
+
+  margin-bottom: 12px;
+
+  background: #f8f9fa;
+
+  border-radius: 12px;
+
+  font-size: 17px;
+
+  transition: 0.3s;
+}
+
+.admin-info:hover {
+  background: #eaf2ff;
+
+  transform: translateX(5px);
+}
+
+.admin-info strong {
+  color: #0d6efd;
+
+  min-width: 100px;
+}
+
+/* Role Badge */
+
+.admin-role {
+  display: inline-block;
+
+  padding: 6px 18px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  background: #198754;
+
+  color: white;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 15px;
+  }
+
+  .admin-profile-card {
+    padding: 20px;
+  }
+
+  .admin-profile-card h2 {
+    font-size: 26px;
+  }
+
+  .admin-info {
+    font-size: 15px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .admin-info strong {
+    min-width: auto;
+  }
+}

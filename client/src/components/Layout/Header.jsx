@@ -8,6 +8,7 @@ import { Badge } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import "../../css/Header.css";
 
 function Header() {
   const [cart] = useCart();
@@ -29,16 +30,7 @@ function Header() {
   const isAdmin = auth?.user?.role === 1; // Check if user is admin
 
   return (
-    <div
-      className="navbar navbar-expand-lg bg-body-tertiary sticky-header"
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 1000,
-        backgroundColor: "#fff",
-        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-      }}
-    >
+    <div className="navbar navbar-expand-lg bg-body-tertiary sticky-header">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -188,20 +180,9 @@ function Header() {
             {/* Conditionally render Cart for non-admin users */}
             {!isAdmin && (
               <li className="nav-item">
-                <Badge
-                  count={cart?.length}
-                  showZero
-                  style={{
-                    backgroundColor: "white",
-                    color: "black",
-                    boxShadow: "0 0 0 1px #ff0303 inset",
-                  }}
-                >
+                <Badge count={cart?.length} showZero>
                   <NavLink to="/cart" className="nav-link" href="#">
-                    <FontAwesomeIcon
-                      icon={faShoppingCart}
-                      style={{ fontSize: "24px", marginRight: "5px" }}
-                    />
+                    <FontAwesomeIcon icon={faShoppingCart} />
                   </NavLink>
                 </Badge>
               </li>

@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
+import "../../css/CreateProduct.css";
 
 const { Option } = Select;
 
@@ -124,14 +125,14 @@ function CreateProduct() {
   }, [preview]);
   return (
     <Layout title="Dashboard - Create Product">
-      <div className="container-fluid m-3 p-3">
+      <div className="container-fluid admin-product-page">
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />
           </div>
           <div className="col-md-9">
             <h1>Create Product</h1>
-            <form className="m-1 w-75" onSubmit={handleCreate}>
+            <form className="product-form" onSubmit={handleCreate}>
               {/* Category Selector */}
               <Select
                 variant={false}
@@ -150,7 +151,7 @@ function CreateProduct() {
 
               {/* Photo Upload */}
               <div className="mb-3">
-                <label className="btn btn-outline-secondary col-md-12">
+                <label className="btn btn-outline-secondary col-md-12 upload-photo-btn">
                   {photo ? photo.name : "Upload Photo"}
                   <input
                     type="file"
@@ -163,13 +164,12 @@ function CreateProduct() {
 
               {/* Display Selected Photo */}
               {photo && (
-                <div className="mb-3 text-center">
+                <div className="mb-3 product-preview">
                   <img
                     src={preview}
                     alt="preview"
                     height="200"
                     className="img-fluid rounded"
-                    style={{ objectFit: "cover" }}
                   />
                 </div>
               )}
@@ -233,7 +233,10 @@ function CreateProduct() {
 
               {/* Create Product Button */}
               <div className="mb-3">
-                <button type="submit" className="btn btn-primary">
+                <button
+                  type="submit"
+                  className="btn btn-primary create-product-btn"
+                >
                   CREATE PRODUCT
                 </button>
               </div>

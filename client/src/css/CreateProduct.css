@@ -1,0 +1,175 @@
+/* ==========================
+   ADMIN CREATE PRODUCT
+========================== */
+
+.admin-product-page {
+  padding: 25px;
+}
+
+/* Heading */
+
+.admin-product-page h1 {
+  font-size: 32px;
+
+  font-weight: 700;
+
+  margin-bottom: 25px;
+}
+
+/* Form Card */
+
+.product-form {
+  background: #fff;
+
+  width: 75%;
+
+  padding: 30px;
+
+  border-radius: 18px;
+
+  box-shadow: var(--shadow-md);
+}
+
+/* Inputs */
+
+.product-form .form-control {
+  height: 48px;
+
+  border-radius: 10px;
+
+  border: 1px solid #ddd;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.product-form textarea {
+  height: 130px;
+
+  resize: none;
+
+  padding: 15px;
+}
+
+.product-form .form-control:focus {
+  border-color: #0d6efd;
+
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* Select */
+
+.product-form .ant-select {
+  width: 100%;
+
+  height: 48px;
+}
+
+.product-form .ant-select-selector {
+  height: 48px !important;
+
+  display: flex;
+
+  align-items: center;
+
+  border-radius: 10px !important;
+}
+
+/* Upload Button */
+
+.upload-photo-btn {
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.upload-photo-btn:hover {
+  background: #6c757d;
+
+  color: white;
+}
+
+/* Preview */
+
+.product-preview {
+  background: #f8f9fa;
+
+  padding: 15px;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.product-preview img {
+  width: 250px;
+
+  height: 250px;
+
+  object-fit: contain;
+
+  border-radius: 15px;
+}
+
+/* Create Button */
+
+.create-product-btn {
+  width: 100%;
+
+  height: 50px;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.create-product-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .product-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-product-page {
+    padding: 15px;
+  }
+
+  .admin-product-page h1 {
+    font-size: 26px;
+  }
+
+  .product-form {
+    padding: 20px;
+  }
+
+  .product-preview img {
+    width: 180px;
+
+    height: 180px;
+  }
+}

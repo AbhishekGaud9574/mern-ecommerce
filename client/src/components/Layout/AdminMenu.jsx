@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
+import "../../css/AdminMenu.css";
 
 function AdminMenu() {
   return (
-    <div className="text-center">
-      <h4 className="mb-3">Admin Panel</h4>
+    <div className="admin-menu text-center">
+      <h4 className="admin-title mb-3">Admin Panel</h4>
 
-      <div className="list-group">
+      <div className="list-group admin-sidebar">
         <NavLink
           to="/dashboard/admin/create-category"
           className={({ isActive }) =>

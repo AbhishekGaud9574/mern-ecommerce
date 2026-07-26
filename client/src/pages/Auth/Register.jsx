@@ -4,6 +4,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "../../css/Register.css";
 
 function Register() {
   const [name, setName] = useState("");

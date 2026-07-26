@@ -1,0 +1,91 @@
+/* ===========================
+   CATEGORIES PAGE
+=========================== */
+
+.categories-page {
+  padding: 50px 0;
+}
+
+.categories-title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.category-card {
+  background: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 40px 25px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.category-card h4 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.category-btn {
+  width: 180px;
+  margin: auto;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 992px) {
+  .categories-title {
+    font-size: 32px;
+  }
+
+  .category-card {
+    padding: 30px 20px;
+  }
+
+  .category-card h4 {
+    font-size: 24px;
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+  .categories-page {
+    padding: 30px 0;
+  }
+
+  .categories-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .category-card {
+    padding: 25px 15px;
+  }
+
+  .category-card h4 {
+    font-size: 22px;
+  }
+
+  .category-btn {
+    width: 100%;
+  }
+}

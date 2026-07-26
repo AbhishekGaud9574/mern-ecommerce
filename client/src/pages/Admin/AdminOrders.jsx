@@ -5,6 +5,8 @@ import axios from "axios";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
 import { Select } from "antd";
+import "../../css/AdminOrders.css";
+import { API } from "../../axiosSetup";
 
 function AdminOrders() {
   const [paymentStatus] = useState(["Pending", "Paid", "Failed", "Refunded"]);
@@ -83,7 +85,6 @@ function AdminOrders() {
                   <Select
                     value={order.status}
                     onChange={(value) => handleChange(order._id, value)}
-                    style={{ width: 170 }}
                   >
                     {status.map((s) => (
                       <Option key={s} value={s}>
@@ -154,7 +155,7 @@ function AdminOrders() {
                       {/* Product Image */}
                       <div className="col-md-3 text-center">
                         <img
-                          src={`/api/v1/product/product-photo/${item.product?._id}`}
+                          src={`${API}/api/v1/product/product-photo/${item.product?._id}`}
                           className="admin-order-img"
                           alt={item.product?.name}
                         />

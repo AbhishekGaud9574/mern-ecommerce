@@ -7,6 +7,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useProducts } from "../context/ProductContext";
 import { API } from "../axiosSetup";
+import "../css/Cart.css";
 
 function CartPage() {
   const [cart, setCart] = useCart();
@@ -122,7 +123,7 @@ function CartPage() {
 
   return (
     <Layout>
-      <div className="container">
+      <div className="container cart-page">
         <h2 className="text-center mb-3">
           Hello {auth?.user?.name || "Guest"}
         </h2>
@@ -132,21 +133,17 @@ function CartPage() {
           <div className="col-md-8">
             {cart?.length > 0 ? (
               cart.map((p) => (
-                <div className="card cart-item" key={p._id}>
+                <div className="card cart-item mb-4" key={p._id}>
                   <div className="row g-0 align-items-center">
-                    <div className="col-4 col-md-3 text-center p-3">
+                    <div className="col-md-4 text-center p-3">
                       <img
                         src={`${API}/api/v1/product/product-photo/${p._id}`}
                         alt={p.name}
                         className="cart-product-img"
-                        style={{
-                          maxHeight: "150px",
-                          objectFit: "contain",
-                        }}
                       />
                     </div>
 
-                    <div className="col-8 col-md-9">
+                    <div className="col-md-8">
                       <div className="card-body">
                         <h5 className="fw-bold">{p.name}</h5>
 
@@ -194,7 +191,9 @@ function CartPage() {
                 </div>
               ))
             ) : (
-              <h3>Your cart is empty</h3>
+              <div className="empty-cart">
+                <h3>Your cart is empty</h3>
+              </div>
             )}
           </div>
 
@@ -246,7 +245,6 @@ function CartPage() {
 
                 <button
                   className="btn btn-warning w-100 mb-2"
-                  style={{ color: "white" }}
                   onClick={() => navigate("/dashboard/user/profile")}
                 >
                   {address?.street ? "Update Address" : "Add Address"}

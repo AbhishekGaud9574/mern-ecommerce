@@ -5,6 +5,8 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
+import { API } from "./../../axiosSetup";
+import "../../css/UpdateProduct.css";
 
 const { Option } = Select;
 
@@ -43,7 +45,7 @@ function UpdateProduct() {
         setShipping(product.shipping ? "1" : "0");
         setCategory(product.category._id);
 
-        setPreview(`/api/v1/product/product-photo/${product._id}`);
+        setPreview(`${API}/api/v1/product/product-photo/${product._id}`);
       }
     } catch (error) {
       console.log(error);
@@ -179,7 +181,6 @@ function UpdateProduct() {
                 placeholder="Select a Category"
                 size="large"
                 showSearch
-                style={{ width: "100%", marginBottom: "1rem" }}
                 onChange={(value) => setCategory(value)}
                 value={category}
               >
@@ -213,20 +214,8 @@ function UpdateProduct() {
 
               {/* Photo Preview */}
               <div className="mb-3 text-center">
-                <div
-                  className="border rounded shadow-sm p-2 d-inline-block"
-                  style={{ width: "260px" }}
-                >
-                  <img
-                    src={preview}
-                    alt={name}
-                    style={{
-                      width: "100%",
-                      height: "220px",
-                      objectFit: "cover",
-                      borderRadius: "8px",
-                    }}
-                  />
+                <div className="border rounded shadow-sm p-2 d-inline-block">
+                  <img src={preview} alt={name} />
                 </div>
               </div>
 
@@ -281,7 +270,6 @@ function UpdateProduct() {
               <Select
                 variant="outlined"
                 size="large"
-                style={{ width: "100%", marginBottom: "1rem" }}
                 placeholder="Select Shipping"
                 onChange={(value) => setShipping(value)}
                 value={shipping}

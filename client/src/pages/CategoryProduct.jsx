@@ -5,6 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useCart } from "../context/cart";
 import { API } from "../axiosSetup";
+import "../css/CategoryProduct.css";
 
 function CategoryProduct() {
   const navigate = useNavigate();
@@ -61,11 +62,9 @@ function CategoryProduct() {
 
   return (
     <Layout>
-      <div className="container mt-4">
-        <h2 className="text-center mb-2">Category - {category?.name}</h2>
-        <p className="text-center text-muted">
-          {products?.length} Product(s) Found
-        </p>
+      <div className="container category-product-page">
+        <h2 className="category-title">Category - {category?.name}</h2>
+        <p className="category-subtitle">{products?.length} Product(s) Found</p>
 
         <div className="row g-4">
           {products?.length ? (
@@ -74,18 +73,12 @@ function CategoryProduct() {
                 className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3"
                 key={p._id}
               >
-                <div className="card h-100 shadow-sm">
+                <div className="card category-product-card h-100">
                   <div className="product-img-container">
                     <img
                       src={`${API}/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
-                      style={{
-                        height: "200px",
-                        objectFit: "contain",
-                        background: "#fff",
-                        // padding: "12px",
-                      }}
                     />
 
                     {p.quantity <= 0 && (
@@ -102,13 +95,17 @@ function CategoryProduct() {
                         : p.description}
                     </p>
 
-                    <h5 className="text-success mb-3">
+                    <h5 className="category-price">
                       $ {Number(p.price).toLocaleString()}
                     </h5>
 
-                    <div className="mt-auto d-flex gap-2">
+                    <div
+                      className={`category-btn-group ${
+                        p.quantity <= 0 ? "out-stock-btn" : ""
+                      }`}
+                    >
                       <button
-                        className="btn btn-primary w-50"
+                        className="btn btn-primary"
                         onClick={() => navigate(`/product/${p.slug}`)}
                       >
                         View Details
@@ -138,7 +135,7 @@ function CategoryProduct() {
               </div>
             ))
           ) : (
-            <div className="col-12 text-center">
+            <div className="col-12 no-product">
               <h4>No Products Available</h4>
             </div>
           )}

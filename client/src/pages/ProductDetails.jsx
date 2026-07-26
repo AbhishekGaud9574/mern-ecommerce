@@ -5,6 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useCart } from "../context/cart";
 import { API } from "../axiosSetup";
+import "../css/ProductDetails.css";
 
 function ProductDetails() {
   const { slug } = useParams();
@@ -113,7 +114,7 @@ function ProductDetails() {
 
   return (
     <Layout title="Product Details">
-      <div className="container mt-4">
+      <div className="container product-details-page">
         <div className="row">
           <div className="col-md-6">
             <img
@@ -123,11 +124,13 @@ function ProductDetails() {
             />
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-6 product-info">
             <h2>{product.name}</h2>
             <p>{product.description}</p>
-            <h4>Price: ₹{product.price}</h4>
-            <h5>Category: {product?.category?.name}</h5>
+            <h4 className="product-price">$ {product.price}</h4>
+            <h5 className="product-category">
+              Category : {product?.category?.name}
+            </h5>
 
             {product.quantity > 0 ? (
               cart.some((item) => item._id === product._id) ? (
@@ -158,16 +161,12 @@ function ProductDetails() {
 
         <hr />
 
-        <div className="row mt-4">
+        <div className="row related-products">
           <h3>Related Products</h3>
           <div className="d-flex flex-wrap">
             {relatedProducts?.length ? (
               relatedProducts.map((p) => (
-                <div
-                  key={p._id}
-                  className="card m-2"
-                  style={{ width: "18rem" }}
-                >
+                <div key={p._id} className="card m-2">
                   <img
                     src={`${API}/api/v1/product/product-photo/${p._id}`}
                     className="product-details-img"
@@ -176,7 +175,7 @@ function ProductDetails() {
                   <div className="card-body">
                     <h5>{p.name}</h5>
                     <p>{p.description.substring(0, 60)}...</p>
-                    <p>$ {p.price}</p>
+                    <h6>$ {p.price}</h6>
 
                     <div className="d-flex justify-content-between">
                       <button

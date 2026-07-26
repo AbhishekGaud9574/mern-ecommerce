@@ -1,0 +1,151 @@
+/* ===========================
+   LARGE LAPTOP
+=========================== */
+
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* ===========================
+   LAPTOP
+=========================== */
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+
+  section {
+    padding: 45px 0;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 95%;
+  }
+
+  section {
+    padding: 35px 0;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 19px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 17px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+/* ===========================
+   EXTRA SMALL
+=========================== */
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+}

@@ -1,7 +1,7 @@
-import React from 'react';
-import { useSearch } from '../../context/search';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React from "react";
+import { useSearch } from "../../context/search";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function SearchInput() {
   const [values, setValues] = useSearch();
@@ -9,14 +9,12 @@ function SearchInput() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (!values.keyword.trim()) {
-    //   // Prevent search if input is empty
-    //   return alert('Please enter a keyword to search.');
-    // }
     try {
-      const { data } = await axios.get(`/api/v1/product/search/${values.keyword}`);
-      setValues({ ...values, results: data });
-      navigate('/search');
+      const { data } = await axios.get(
+        `/api/v1/product/search/${values.keyword}`,
+      );
+      setValues({ keyword: "", results: data });
+      navigate("/search");
     } catch (error) {
       console.error(error);
     }

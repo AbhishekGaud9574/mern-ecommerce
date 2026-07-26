@@ -9,6 +9,7 @@ import { Checkbox, Radio } from "antd";
 import { useProducts } from "../context/ProductContext";
 import { Prices } from "../components/Prices";
 import { API } from "../axiosSetup";
+import "../css/Home.css";
 
 function Home() {
   const navigate = useNavigate();
@@ -161,11 +162,7 @@ function Home() {
                 className="d-flex flex-column"
               >
                 {Prices?.map((p) => (
-                  <Radio
-                    key={p._id}
-                    value={p.array}
-                    style={{ marginBottom: "8px" }}
-                  >
+                  <Radio key={p._id} value={p.array}>
                     {p.name}
                   </Radio>
                 ))}
@@ -222,7 +219,6 @@ function Home() {
                   src="/images/slider3.webp"
                   className="d-block w-100"
                   alt="Slide 1"
-                  style={{ maxHeight: "500px", objectFit: "cover" }}
                 />
               </div>
               <div className="carousel-item">
@@ -230,7 +226,6 @@ function Home() {
                   src="/images/slider4.jpg"
                   className="d-block w-100"
                   alt="Slide 2"
-                  style={{ maxHeight: "500px", objectFit: "cover" }}
                 />
               </div>
               <div className="carousel-item">
@@ -238,7 +233,6 @@ function Home() {
                   src="/images/slider1.webp"
                   className="d-block w-100"
                   alt="Slide 3"
-                  style={{ maxHeight: "500px", objectFit: "cover" }}
                 />
               </div>
             </div>
@@ -261,16 +255,12 @@ function Home() {
             </button>
           </div>
 
-          <h1 className="text-center mt-3">All Products</h1>
+          <h1 className="text-center mt-3 home-title">All Products</h1>
 
           <div className="d-flex flex-wrap m-2">
             {products?.length ? (
               products.map((p) => (
-                <div
-                  key={p._id}
-                  className="card m-4"
-                  style={{ width: "18rem" }}
-                >
+                <div key={p._id} className="card m-4">
                   <div className="product-img-container">
                     <img
                       src={`${API}/api/v1/product/product-photo/${p._id}`}
@@ -286,11 +276,9 @@ function Home() {
                   <div className="card-body d-flex flex-column">
                     <h5>{p.name}</h5>
 
-                    <p style={{ flex: 1 }}>
-                      {p.description.substring(0, 60)}...
-                    </p>
+                    <p>{p.description.substring(0, 60)}...</p>
 
-                    <h5 className="text-success mb-3">₹ {p.price}</h5>
+                    <h5 className="text-success mb-3">$ {p.price}</h5>
 
                     {!isAdmin && (
                       <div className="d-flex gap-2">
@@ -333,7 +321,7 @@ function Home() {
 
           {!checked.length && !radio.length && products.length < total && (
             <button
-              className="btn btn-dark m-3"
+              className="btn btn-dark load-more-btn"
               onClick={() => setPage((prev) => prev + 1)}
             >
               {loading ? "Loading..." : "Load More"}

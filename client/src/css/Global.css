@@ -1,0 +1,170 @@
+/* ===========================
+   RESET
+=========================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   ROOT VARIABLES
+=========================== */
+
+:root {
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+  --success: #198754;
+  --danger: #dc3545;
+  --warning: #ffc107;
+
+  --dark: #212529;
+  --light: #f8f9fa;
+  --white: #ffffff;
+
+  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.18);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --transition: 0.3s ease;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  background: #f8f9fa;
+
+  color: #212529;
+
+  overflow-x: hidden;
+
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+a {
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* ===========================
+   IMAGES
+=========================== */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+input,
+textarea,
+select {
+  outline: none;
+
+  border: none;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card {
+  border: none;
+
+  border-radius: 15px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+section {
+  padding: 60px 0;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container {
+  max-width: 1320px;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d6efd;
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+/* ===========================
+   SELECTION
+=========================== */
+
+::selection {
+  background: #0d6efd;
+
+  color: #fff;
+}

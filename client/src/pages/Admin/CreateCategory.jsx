@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
 import { Modal } from "antd";
+import "../../css/CreateCategory.css";
 
 function CreateCategory() {
   const [categories, setCategories] = useState([]);
@@ -93,21 +94,21 @@ function CreateCategory() {
 
   return (
     <Layout title="Dashboard - Create Category">
-      <div className="container-fluid m-3 p-3">
+      <div className="container-fluid admin-category-page">
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />
           </div>
           <div className="col-md-9">
             <h1>Manage Category</h1>
-            <div className="p-3 w-50">
+            <div className="category-form-box">
               <CategoryForm
                 handleSubmit={handleSubmit}
                 value={name}
                 setValue={setName}
               />
             </div>
-            <div className="w-75">
+            <div className="category-table-box">
               <table className="table">
                 <thead>
                   <tr>

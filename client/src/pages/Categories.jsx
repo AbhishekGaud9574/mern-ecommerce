@@ -1,6 +1,7 @@
 import Layout from "../components/Layout/Layout";
 import useCategory from "../hooks/useCategory";
 import { Link } from "react-router-dom";
+import "../css/Category.css";
 
 function Categories() {
   const categories = useCategory();
