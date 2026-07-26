@@ -46,18 +46,6 @@ function Home() {
     }
   }, []);
 
-  // ==============================Get Products (First Load)==============================
-  // const getAllProducts = useCallback(async () => {
-  //   try {
-  //     setLoading(true);
-  //     const { data } = await axios.get(`/api/v1/product/product-list/1`);
-  //     setProducts(data?.products || []);
-  //     setLoading(false);
-  //   } catch (error) {
-  //     setLoading(false);
-  //     console.error(error);
-  //   }
-  // }, []);
 
   // ==============================Load More Products==============================
   const loadMore = useCallback(async () => {

@@ -4,6 +4,7 @@ import Layout from "../components/Layout/Layout";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useCart } from "../context/cart";
+import { API } from "../axiosSetup";
 
 function ProductDetails() {
   const { slug } = useParams();
@@ -168,7 +169,7 @@ function ProductDetails() {
                   style={{ width: "18rem" }}
                 >
                   <img
-                    src={`/api/v1/product/product-photo/${p._id}`}
+                    src={`${API}/api/v1/product/product-photo/${p._id}`}
                     className="product-details-img"
                     alt={p.name}
                   />

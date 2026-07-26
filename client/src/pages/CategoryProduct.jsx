@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useCart } from "../context/cart";
+import { API } from "../axiosSetup";
 
 function CategoryProduct() {
   const navigate = useNavigate();
@@ -76,7 +77,7 @@ function CategoryProduct() {
                 <div className="card h-100 shadow-sm">
                   <div className="product-img-container">
                     <img
-                      src={`/api/v1/product/product-photo/${p._id}`}
+                      src={`${API}/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
                       style={{

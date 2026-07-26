@@ -87,7 +87,7 @@ code {
 }
 
 .navbar-brand span {
-  font-family: "Brush Script MT", "Brush Script Std", cursive;
+  font-family: "Brush Script MT", "Brush Script Std";
   font-size: 35px;
   letter-spacing: 3px;
   color: #e32832;

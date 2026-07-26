@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useProducts } from "../context/ProductContext";
+import { API } from "../axiosSetup";
 
 function CartPage() {
   const [cart, setCart] = useCart();
@@ -135,7 +136,7 @@ function CartPage() {
                   <div className="row g-0 align-items-center">
                     <div className="col-4 col-md-3 text-center p-3">
                       <img
-                        src={`/api/v1/product/product-photo/${p._id}`}
+                        src={`${API}/api/v1/product/product-photo/${p._id}`}
                         alt={p.name}
                         className="cart-product-img"
                         style={{
