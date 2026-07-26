@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { Checkbox, Radio } from "antd";
 import { useProducts } from "../context/ProductContext";
 import { Prices } from "../components/Prices";
+import { API } from "../axiosSetup";
 
 function Home() {
   const navigate = useNavigate();
@@ -45,7 +46,6 @@ function Home() {
       console.error(error);
     }
   }, []);
-
 
   // ==============================Load More Products==============================
   const loadMore = useCallback(async () => {
@@ -273,7 +273,7 @@ function Home() {
                 >
                   <div className="product-img-container">
                     <img
-                      src={`/api/v1/product/product-photo/${p._id}`}
+                      src={`${API}/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
                     />
