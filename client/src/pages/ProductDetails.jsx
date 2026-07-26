@@ -117,7 +117,7 @@ function ProductDetails() {
         <div className="row">
           <div className="col-md-6">
             <img
-              src={`/api/v1/product/product-photo/${product._id}`}
+              src={`${API}/api/v1/product/product-photo/${product._id}`}
               alt={product.name}
               className="product-details-img"
             />
