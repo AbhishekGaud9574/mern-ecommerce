@@ -261,12 +261,12 @@ function Home() {
             {products?.length ? (
               products.map((p) => (
                 <div key={p._id} className="product-col p-2">
-                  <div className="card h-100">
+                  <div className="card home-card h-100">
                     {/* Image */}
                     <div className="product-img-container">
                       <img
                         src={`${API}/api/v1/product/product-photo/${p._id}`}
-                        className="card-img-top"
+                        className="card-img-top home-card-img"
                         alt={p.name}
                       />
 
