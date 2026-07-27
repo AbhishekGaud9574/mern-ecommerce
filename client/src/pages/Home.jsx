@@ -257,7 +257,7 @@ function Home() {
 
           <h1 className="text-center mt-3 home-title">All Products</h1>
 
-          <div className="d-flex flex-wrap">
+          <div className="d-flex flex-wrap justify-content-center">
             {products?.length ? (
               products.map((p) => (
                 <div key={p._id} className="product-col p-2">

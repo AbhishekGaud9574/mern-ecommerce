@@ -71,6 +71,8 @@
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: 0.35s;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -93,6 +95,7 @@
 .card-body {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .card-body h5 {
@@ -115,7 +118,17 @@
   font-weight: 600;
   border-radius: 8px;
 }
+.card .d-flex {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
 
+.card .d-flex .btn {
+  flex: 1;
+  border-radius: 8px;
+  font-weight: 600;
+}
 /* ===========================
    OUT OF STOCK
 =========================== */
@@ -147,41 +160,24 @@
   font-weight: 600;
 }
 
-/* ===========================
-   TABLET
-=========================== */
-
+/* Tablet */
 @media (min-width: 768px) {
   .product-col {
     width: 50%;
   }
 }
 
-/* ===========================
-   DESKTOP
-=========================== */
-
+/* Desktop */
 @media (min-width: 1200px) {
   .product-col {
     width: 25%;
   }
 }
 
-/* ===========================
-   MOBILE
-=========================== */
-
+/* Mobile */
 @media (max-width: 767px) {
-  .home-title {
-    font-size: 26px;
-  }
-
-  .carousel-inner img {
-    height: 220px;
-  }
-
-  .card-img-top {
-    height: 220px;
+  .product-col {
+    width: 100%;
   }
 
   .card .d-flex {
