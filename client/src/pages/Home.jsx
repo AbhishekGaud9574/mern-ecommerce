@@ -260,7 +260,10 @@ function Home() {
           <div className="row g-4 justify-content-center">
             {products?.length ? (
               products.map((p) => (
-                <div key={p._id} className="product-col">
+                <div
+                  key={p._id}
+                  className="col-12 col-sm-6 col-lg-6 col-xl-4 col-xxl-3"
+                >
                   <div className="card home-card h-100">
                     <div className="product-img-container">
                       <img
