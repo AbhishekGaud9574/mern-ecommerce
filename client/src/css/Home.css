@@ -196,6 +196,35 @@
 .product-col .btn:hover {
   transform: translateY(-2px);
 }
+/* Buttons Container */
+.home-card .d-flex {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+/* Buttons */
+.home-card .btn {
+  flex: 1;
+  height: 45px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  white-space: nowrap; /* text next line me nahi jayega */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+}
+
+.home-card .btn i {
+  margin-right: 6px;
+  font-size: 14px;
+}
 
 /* ===================================
         LOAD MORE
