@@ -257,10 +257,10 @@ function Home() {
 
           <h1 className="text-center mt-3 home-title">All Products</h1>
 
-          <div className="d-flex flex-wrap m-2">
+          <div className="row g-4">
             {products?.length ? (
               products.map((p) => (
-                <div key={p._id} className="card m-4">
+                <div key={p._id} className="col-6 col-md-6 col-lg-4 col-xl-3">
                   <div className="product-img-container">
                     <img
                       src={`${API}/api/v1/product/product-photo/${p._id}`}
