@@ -257,60 +257,64 @@ function Home() {
 
           <h1 className="text-center mt-3 home-title">All Products</h1>
 
-          <div className="row g-4">
+          <div className="d-flex flex-wrap">
             {products?.length ? (
               products.map((p) => (
-                <div key={p._id} className="col-6 col-md-6 col-lg-4 col-xl-3">
-                  <div className="product-img-container">
-                    <img
-                      src={`${API}/api/v1/product/product-photo/${p._id}`}
-                      className="card-img-top"
-                      alt={p.name}
-                    />
+                <div key={p._id} className="product-col p-2">
+                  <div className="card h-100">
+                    {/* Image */}
+                    <div className="product-img-container">
+                      <img
+                        src={`${API}/api/v1/product/product-photo/${p._id}`}
+                        className="card-img-top"
+                        alt={p.name}
+                      />
 
-                    {p.quantity <= 0 && (
-                      <div className="out-of-stock-overlay">OUT OF STOCK</div>
-                    )}
-                  </div>
+                      {p.quantity <= 0 && (
+                        <div className="out-of-stock-overlay">OUT OF STOCK</div>
+                      )}
+                    </div>
 
-                  <div className="card-body d-flex flex-column">
-                    <h5>{p.name}</h5>
+                    {/* Card Body */}
+                    <div className="card-body d-flex flex-column">
+                      <h5>{p.name}</h5>
 
-                    <p>{p.description.substring(0, 60)}...</p>
+                      <p>{p.description.substring(0, 60)}...</p>
 
-                    <h5 className="text-success mb-3">$ {p.price}</h5>
+                      <h5 className="text-success mb-3">$ {p.price}</h5>
 
-                    {!isAdmin && (
-                      <div className="d-flex gap-2">
-                        <button
-                          className={`btn btn-primary ${
-                            p.quantity > 0 ? "w-50" : "w-100"
-                          }`}
-                          onClick={() => navigate(`/product/${p.slug}`)}
-                        >
-                          View Details
-                        </button>
+                      {!isAdmin && (
+                        <div className="d-flex gap-2 mt-auto">
+                          <button
+                            className={`btn btn-primary ${
+                              p.quantity > 0 ? "w-50" : "w-100"
+                            }`}
+                            onClick={() => navigate(`/product/${p.slug}`)}
+                          >
+                            View Details
+                          </button>
 
-                        {p.quantity > 0 &&
-                          (cart.some((item) => item._id === p._id) ? (
-                            <button
-                              className="btn btn-success w-50"
-                              onClick={() => navigate("/cart")}
-                            >
-                              <i className="fa-solid fa-cart-arrow-down me-2"></i>
-                              Go to Cart
-                            </button>
-                          ) : (
-                            <button
-                              className="btn btn-dark w-50"
-                              onClick={() => handleAddToCart(p)}
-                            >
-                              <i className="fa-solid fa-cart-shopping me-2"></i>
-                              Add to Cart
-                            </button>
-                          ))}
-                      </div>
-                    )}
+                          {p.quantity > 0 &&
+                            (cart.some((item) => item._id === p._id) ? (
+                              <button
+                                className="btn btn-success w-50"
+                                onClick={() => navigate("/cart")}
+                              >
+                                <i className="fa-solid fa-cart-arrow-down me-2"></i>
+                                Go to Cart
+                              </button>
+                            ) : (
+                              <button
+                                className="btn btn-dark w-50"
+                                onClick={() => handleAddToCart(p)}
+                              >
+                                <i className="fa-solid fa-cart-shopping me-2"></i>
+                                Add to Cart
+                              </button>
+                            ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))

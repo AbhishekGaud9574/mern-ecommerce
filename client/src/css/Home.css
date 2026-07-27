@@ -14,7 +14,6 @@
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #222;
 }
 
 .ant-checkbox-wrapper,
@@ -23,14 +22,10 @@
   font-size: 15px;
 }
 
-.reset-filters {
-  margin-top: 25px;
-}
-
 .reset-filters .btn {
   width: 100%;
+  margin-top: 20px;
   border-radius: 8px;
-  font-weight: 600;
 }
 
 /* ===========================
@@ -38,9 +33,9 @@
 =========================== */
 
 .carousel {
-  border-radius: 12px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .carousel-inner img {
@@ -49,33 +44,33 @@
   object-fit: cover;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(100%);
-}
-
 /* ===========================
-   PAGE TITLE
+   TITLE
 =========================== */
 
 .home-title {
-  margin: 30px 0;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
-  color: #222;
+  margin: 30px 0;
 }
 
 /* ===========================
-   PRODUCTS
+   PRODUCT GRID
 =========================== */
+
+.product-col {
+  width: 100%;
+  padding: 12px;
+}
 
 .card {
   width: 100%;
+  height: 100%;
   border: none;
   border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: 0.35s;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
 .card:hover {
@@ -83,12 +78,16 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
+.product-img-container {
+  position: relative;
+}
+
 .card-img-top {
   width: 100%;
-  height: 250px;
+  height: 240px;
   object-fit: contain;
   background: #fff;
-  padding: 12px;
+  padding: 15px;
 }
 
 .card-body {
@@ -96,30 +95,23 @@
   flex-direction: column;
 }
 
-.card-body h5:first-child {
+.card-body h5 {
   font-size: 18px;
   font-weight: 700;
-  color: #222;
 }
 
 .card-body p {
-  flex: 1;
   color: #666;
-  font-size: 14px;
-  margin: 10px 0;
+  flex: 1;
+  margin: 12px 0;
 }
 
-.card-body .text-success {
+.text-success {
   font-size: 22px;
   font-weight: bold;
 }
 
-/* ===========================
-   BUTTONS
-=========================== */
-
 .card .btn {
-  font-size: 14px;
   font-weight: 600;
   border-radius: 8px;
 }
@@ -128,10 +120,6 @@
    OUT OF STOCK
 =========================== */
 
-.product-img-container {
-  position: relative;
-}
-
 .out-of-stock-overlay {
   position: absolute;
   top: 50%;
@@ -139,12 +127,12 @@
   width: 100%;
   transform: translateY(-50%);
   background: rgba(220, 53, 69, 0.92);
-  color: #fff;
+  color: white;
   text-align: center;
-  font-size: 18px;
-  font-weight: bold;
   padding: 12px;
+  font-weight: bold;
   letter-spacing: 2px;
+  font-size: 18px;
 }
 
 /* ===========================
@@ -154,27 +142,28 @@
 .load-more-btn {
   display: block;
   margin: 25px auto;
-  min-width: 200px;
-  font-weight: 600;
+  min-width: 220px;
   border-radius: 8px;
+  font-weight: 600;
 }
 
 /* ===========================
    TABLET
 =========================== */
 
-@media (max-width: 992px) {
-  .col-md-2 {
-    margin-bottom: 30px;
+@media (min-width: 768px) {
+  .product-col {
+    width: 50%;
   }
+}
 
-  .card {
-    width: calc(50% - 30px);
-    margin: 15px !important;
-  }
+/* ===========================
+   DESKTOP
+=========================== */
 
-  .carousel-inner img {
-    height: 350px;
+@media (min-width: 1200px) {
+  .product-col {
+    width: 25%;
   }
 }
 
@@ -182,27 +171,13 @@
    MOBILE
 =========================== */
 
-@media (max-width: 768px) {
-  .row.mt-3 {
-    display: block;
-  }
-
-  .col-md-2,
-  .col-md-9 {
-    width: 100%;
-  }
-
+@media (max-width: 767px) {
   .home-title {
     font-size: 26px;
   }
 
   .carousel-inner img {
     height: 220px;
-  }
-
-  .card {
-    width: 100%;
-    margin: 15px 0 !important;
   }
 
   .card-img-top {
@@ -219,7 +194,7 @@
 }
 
 /* ===========================
-   SMALL MOBILE
+   VERY SMALL MOBILE
 =========================== */
 
 @media (max-width: 480px) {
@@ -227,19 +202,19 @@
     height: 180px;
   }
 
+  .card-img-top {
+    height: 180px;
+  }
+
   .home-title {
     font-size: 22px;
   }
 
-  .card-body h5:first-child {
+  .card-body h5 {
     font-size: 17px;
   }
 
   .card-body p {
     font-size: 13px;
-  }
-
-  .card-body .text-success {
-    font-size: 20px;
   }
 }
