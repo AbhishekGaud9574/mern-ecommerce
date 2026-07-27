@@ -257,12 +257,11 @@ function Home() {
 
           <h1 className="text-center mt-3 home-title">All Products</h1>
 
-          <div className="d-flex flex-wrap justify-content-center">
+          <div className="row g-4 justify-content-center">
             {products?.length ? (
               products.map((p) => (
-                <div key={p._id} className="product-col p-2">
+                <div key={p._id} className="product-col">
                   <div className="card home-card h-100">
-                    {/* Image */}
                     <div className="product-img-container">
                       <img
                         src={`${API}/api/v1/product/product-photo/${p._id}`}
@@ -275,7 +274,6 @@ function Home() {
                       )}
                     </div>
 
-                    {/* Card Body */}
                     <div className="card-body d-flex flex-column">
                       <h5>{p.name}</h5>
 
@@ -287,7 +285,7 @@ function Home() {
                         <div className="d-flex gap-2 mt-auto">
                           <button
                             className={`btn btn-primary ${
-                              p.quantity > 0 ? "w-50" : "w-100"
+                              p.quantity > 0 ? "" : "w-100"
                             }`}
                             onClick={() => navigate(`/product/${p.slug}`)}
                           >
@@ -297,7 +295,7 @@ function Home() {
                           {p.quantity > 0 &&
                             (cart.some((item) => item._id === p._id) ? (
                               <button
-                                className="btn btn-success w-50"
+                                className="btn btn-success"
                                 onClick={() => navigate("/cart")}
                               >
                                 <i className="fa-solid fa-cart-arrow-down me-2"></i>
@@ -305,7 +303,7 @@ function Home() {
                               </button>
                             ) : (
                               <button
-                                className="btn btn-dark w-50"
+                                className="btn btn-dark"
                                 onClick={() => handleAddToCart(p)}
                               >
                                 <i className="fa-solid fa-cart-shopping me-2"></i>
