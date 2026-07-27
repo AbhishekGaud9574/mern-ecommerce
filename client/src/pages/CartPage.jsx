@@ -151,7 +151,7 @@ function CartPage() {
                           {p.description.substring(0, 70)}...
                         </p>
 
-                        <h4 className="cart-price">₹ {p.price}</h4>
+                        <h4 className="cart-price">$ {p.price}</h4>
 
                         <small className="stock text-success">
                           {p.quantityInStock > 1 ? "In Stock" : "Out of Stock"}
