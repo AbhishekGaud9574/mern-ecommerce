@@ -295,7 +295,7 @@ function Home() {
                           {p.quantity > 0 &&
                             (cart.some((item) => item._id === p._id) ? (
                               <button
-                                className="btn btn-success"
+                                className="btn btn-success w-50"
                                 onClick={() => navigate("/cart")}
                               >
                                 <i className="fa-solid fa-cart-arrow-down me-2"></i>
@@ -303,7 +303,7 @@ function Home() {
                               </button>
                             ) : (
                               <button
-                                className="btn btn-dark"
+                                className="btn btn-dark w-50"
                                 onClick={() => handleAddToCart(p)}
                               >
                                 <i className="fa-solid fa-cart-shopping me-2"></i>
