@@ -188,7 +188,7 @@ function ProductDetails() {
                       {p.quantity > 0 &&
                         (cart.some((item) => item._id === p._id) ? (
                           <button
-                            className="btn btn-success w-50"
+                            className="btn btn-success"
                             onClick={() => navigate("/cart")}
                           >
                             <i className="fa-solid fa-cart-arrow-down me-2"></i>
@@ -196,7 +196,7 @@ function ProductDetails() {
                           </button>
                         ) : (
                           <button
-                            className="btn btn-dark w-50"
+                            className="btn btn-dark"
                             onClick={() => handleAddToCart(p)}
                           >
                             <i className="fa-solid fa-cart-shopping me-2"></i>

@@ -115,8 +115,12 @@
 }
 
 .related-products .btn {
+  width: 100%;
+  padding: 10px;
+  margin-right: 8px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 /* ===========================
