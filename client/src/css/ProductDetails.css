@@ -89,27 +89,19 @@
   color: #222;
   margin-bottom: 10px;
 
-  /* Long name ko control karega */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  line-height: 24px;
+  min-height: 48px;
+  max-height: 48px;
   overflow: hidden;
 }
 
-/* Description */
 .related-products .card-body p {
   color: #666;
   font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 10px;
-
-  /* Description ko same height me rakhega */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  line-height: 22px;
+  min-height: 44px;
+  max-height: 44px;
   overflow: hidden;
-
-  flex: 1;
 }
 
 /* =========================================
