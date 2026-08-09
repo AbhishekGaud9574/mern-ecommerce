@@ -185,11 +185,6 @@
 
 /* =========================================================
    RELATED PRODUCT IMAGE
-
-   Important:
-   JSX related image also has className="product-details-img"
-
-   So override it here.
 ========================================================= */
 
 .related-products .card .product-details-img {
