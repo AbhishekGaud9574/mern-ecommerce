@@ -81,19 +81,37 @@
 }
 
 /* ===========================
-        IMAGE
+        PRODUCT IMAGE
 =========================== */
 
 .product-img-container {
   position: relative;
+  width: 100%;
+  height: 250px;
+  background: #fff;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
+/* Product image */
 .home-card-img {
+  display: block;
   width: 100%;
-  height: 230px;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
   background: #fff;
-  padding: 15px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Small zoom on hover */
+.home-card:hover .home-card-img {
+  transform: scale(1.03);
 }
 
 .out-of-stock-overlay {
