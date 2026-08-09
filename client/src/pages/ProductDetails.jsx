@@ -169,7 +169,7 @@ function ProductDetails() {
                 <div key={p._id} className="card m-2">
                   <img
                     src={`${API}/api/v1/product/product-photo/${p._id}`}
-                    className="product-details-img"
+                    className="related-product-img"
                     alt={p.name}
                   />
                   <div className="card-body">
